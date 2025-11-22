@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://amorfatix.github.io/</loc>
+    <lastmod>2025-11-21T22:21:18+08:00</lastmod>
+  </url><url>
+    <loc>https://amorfatix.github.io/posts/hello-world/</loc>
+    <lastmod>2025-11-21T22:21:18+08:00</lastmod>
+  </url><url>
+    <loc>https://amorfatix.github.io/posts/</loc>
+    <lastmod>2025-11-21T22:21:18+08:00</lastmod>
+  </url><url>
+    <loc>https://amorfatix.github.io/archives/</loc>
+  </url><url>
+    <loc>https://amorfatix.github.io/categories/</loc>
+  </url><url>
+    <loc>https://amorfatix.github.io/tags/</loc>
+  </url>
+</urlset>
