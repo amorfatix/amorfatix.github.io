@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>GPU on AmorFatIX</title>
+    <link>https://amorfatix.github.io/tags/gpu/</link>
+    <description>Recent content in GPU on AmorFatIX</description>
+    <generator>Hugo -- 0.152.2</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 08 Dec 2025 16:21:48 +0800</lastBuildDate>
+    <atom:link href="https://amorfatix.github.io/tags/gpu/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>多GPU租卡过程</title>
+      <link>https://amorfatix.github.io/posts/rent-gpu/</link>
+      <pubDate>Mon, 08 Dec 2025 16:21:48 +0800</pubDate>
+      <guid>https://amorfatix.github.io/posts/rent-gpu/</guid>
+      <description>&lt;p&gt;cs336第二部分涉及到多GPU并行，实验室的服务器都只有一张GPU&amp;ndash;多机单卡，有些尴尬，所以租卡来实践。&lt;/p&gt;
+&lt;p&gt;我看了几个平台，主流的autodl、阿里云，比较小众的Aladdin、趣算云、ucloud。我的需求仅仅是学习实践，考虑到成本，对GPU的内存计算几乎没有要求。但我发现低端卡反而很少，我推测平台主要提供高端算力，维护成本一样，高端卡盈利更多，低端卡数量本就不多，像我这样租低端卡入门的学生应该不少，所以就导致了现在尴尬的局面：低端卡短缺。&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20251208165356263&#34; loading=&#34;lazy&#34; src=&#34;../assets/image-20251208165356263.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20251208165318929&#34; loading=&#34;lazy&#34; src=&#34;../assets/image-20251208165318929.png&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;autodl：很多人推荐，但剩下的3090都是单张的，遗憾跳过&lt;/li&gt;
+&lt;li&gt;阿里云：贵，跳过&lt;/li&gt;
+&lt;li&gt;Aladdin：原本寄予厚望，因为它的宣传就是比较适合学生，工作流创新，但是我安装vscode插件启动的适合遇到问题，发到交流群没有回复，客服也没有回复，差评&lt;/li&gt;
+&lt;li&gt;趣算云：价格不错，可惜低端卡没了或者不支持多卡&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://passport.compshare.cn/register?referral_code=g7iRJstrkUFf45o7u8bK6&#34;&gt;ucloud&lt;/a&gt;： 价格比autodl便宜，低端卡还有，最后我选择了它。高校认证后还会送20元算力券✌&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;我选的配置如下，挺便宜的：&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20251208170222928&#34; loading=&#34;lazy&#34; src=&#34;../assets/image-20251208170222928.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;使用体验还可以。github下载文件挺快的。&lt;/p&gt;
+&lt;p&gt;因为cs336 作业是uv虚拟环境，我直接从新git clone了作业包，&lt;code&gt;uv run&lt;/code&gt;配置环境，问题是没配置镜像源下载的太慢了，改了配置文件：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;tool&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;uv&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;index-url&lt;/span&gt; = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;https://mirrors.aliyun.com/pypi/simple/&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;# 国内PyPI镜像&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;extra-index-url&lt;/span&gt; = [&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;https://pypi.nvidia.com&amp;#34;&lt;/span&gt;] &lt;span style=&#34;color:#75715e&#34;&gt;# NVIDIA官方仓库&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;重启终端，再下载很迅速。&lt;/p&gt;
+&lt;p&gt;DDP测试成功！&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20251208170753218&#34; loading=&#34;lazy&#34; src=&#34;../assets/image-20251208170753218.png&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;ccf-会员领取算力券&#34;&gt;CCF 会员领取算力券&lt;/h4&gt;
+&lt;!-- raw HTML omitted --&gt;</description>
+    </item>
+  </channel>
+</rss>

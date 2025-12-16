@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>论文阅读 on AmorFatIX</title>
+    <link>https://amorfatix.github.io/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/</link>
+    <description>Recent content in 论文阅读 on AmorFatIX</description>
+    <generator>Hugo -- 0.152.2</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 05 Dec 2025 16:21:48 +0800</lastBuildDate>
+    <atom:link href="https://amorfatix.github.io/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>稀疏注意力</title>
+      <link>https://amorfatix.github.io/posts/sparse-attention/</link>
+      <pubDate>Fri, 05 Dec 2025 16:21:48 +0800</pubDate>
+      <guid>https://amorfatix.github.io/posts/sparse-attention/</guid>
+      <description>&lt;h3 id=&#34;deepseek-v32&#34;&gt;&lt;strong&gt;DeepSeek-V3.2&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;标题&lt;/strong&gt;：DeepSeek-V3.2: Pushing the Frontier of Open Large Language Models&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;作者&lt;/strong&gt;：DeepSeek-AI&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;发表时间/会议&lt;/strong&gt;：2025.12&lt;/p&gt;
+&lt;p&gt;闭源模型（如 GPT-5、Gemini-3.0-Pro）在复杂任务上的性能加速提升，而开源模型的进步速度相对较慢，两者之间的性能差距正在扩大。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;开源模型的三大瓶颈&lt;/strong&gt;：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;架构效率低&lt;/strong&gt;：依赖传统注意力机制，长序列计算复杂度高，采用DSA（Deepseek Sparse Attention）架构，主要依赖&lt;strong&gt;Top-k 选择&lt;/strong&gt;和&lt;strong&gt;闪电索引器&lt;/strong&gt;来选择最重要的 Token&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;后训练计算资源不足&lt;/strong&gt;：开源模型在后训练阶段计算投入有限，影响复杂任务性能。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;智能体能力滞后&lt;/strong&gt;：在泛化能力和指令跟随方面明显落后于闭源模型。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;nsa--原生稀疏注意力&#34;&gt;NSA  原生稀疏注意力&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;标题&lt;/strong&gt;：Native Sparse Attention: Hardware-Aligned and Natively Trainable Sparse Attention&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;作者&lt;/strong&gt;：Jingyang Yuan 等人，来自北京大学和 DeepSeek-AI 。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;发表时间/会议&lt;/strong&gt;：ACL 2025 最佳论文&lt;/p&gt;
+&lt;p&gt;Native体现在从头预训练，让所有参数（包括新的 MLP $\phi$ 和门控 $g_t^c$）协同学习稀疏模式。&lt;/p&gt;
+&lt;p&gt;NSA将注意力机制拆分为三个并行的分支计算Attention输出：&lt;strong&gt;压缩、选择、滑动窗口&lt;/strong&gt;。压缩和选择都是分块的(硬件友好，GPU分块计算)，用MLP压缩token块(输入向量序列，输出单个压缩后的token)，按照压缩块计算出的注意力分数对压缩块进行top-n选择，滑动窗口选择局部token，最后通过门控MLP（输入q输出三个权重）加权计算结果，同时计算&lt;strong&gt;压缩的全局概览&lt;/strong&gt;、&lt;strong&gt;筛选出的关键细节&lt;/strong&gt;和&lt;strong&gt;最近的局部上下文&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;压缩、选择、加权都是可训练的、动态的。&lt;/p&gt;
+&lt;p&gt;受 FlashAttention 的启发，越来越多的稀疏注意力工作（包括 NSA 自己）都把重心放在利用 &lt;strong&gt;Triton&lt;/strong&gt; 等工具开发硬件对齐的内核上，确保理论上的稀疏度能转化为实际的吞吐量提升。&lt;/p&gt;
+&lt;p&gt;思考: 如果 NSA 成为主流，当前的插件式稀疏方法将无法在性能和效率上竞争。它们要么被 NSA 的原生架构所取代，要么必须升级为&lt;strong&gt;服务于 NSA 高效内核的系统级调度和深度压缩工具&lt;/strong&gt;。&lt;/p&gt;
+&lt;h3 id=&#34;fastgen--稀疏注意力&#34;&gt;FastGen  稀疏注意力&lt;/h3&gt;
+&lt;p&gt;FastGen: Adaptive KV Cache Compression for LLMs&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

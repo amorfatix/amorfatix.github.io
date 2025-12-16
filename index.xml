@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>AmorFatIX</title>
+    <link>https://amorfatix.github.io/</link>
+    <description>Recent content on AmorFatIX</description>
+    <generator>Hugo -- 0.152.2</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 09 Dec 2025 01:34:15 +0800</lastBuildDate>
+    <atom:link href="https://amorfatix.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Text2ddl项目总结</title>
+      <link>https://amorfatix.github.io/posts/text2ddl/</link>
+      <pubDate>Tue, 09 Dec 2025 01:34:15 +0800</pubDate>
+      <guid>https://amorfatix.github.io/posts/text2ddl/</guid>
+      <description>&lt;h3 id=&#34;text2ddl&#34;&gt;text2ddl&lt;/h3&gt;
+&lt;p&gt;text2ddl需要输出报告吗？&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 在schema2ddl中加入text2schema&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 完善转义词&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 修改逻辑，把schema换成结构化输入，用text2schema的中间输出，问题：如何提取？接入&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; schema2ddl和text2schema是独立的，ddl执行出的问题也可以作为反馈信息，把schema2ddl加到text2schema的multi-agent里面？&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 测试，测试时修改问题，已有数据能完全覆盖问题吗。主要还是测试schema2ddl&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 重写前端&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>关于我</title>
+      <link>https://amorfatix.github.io/about/</link>
+      <pubDate>Mon, 08 Dec 2025 18:24:09 +0800</pubDate>
+      <guid>https://amorfatix.github.io/about/</guid>
+      <description>&lt;p&gt;你好，我是amorfatix，amor fati的意思是爱命运。&lt;/p&gt;
+&lt;p&gt;cs研0，推理加速方向小白&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>多GPU租卡过程</title>
+      <link>https://amorfatix.github.io/posts/rent-gpu/</link>
+      <pubDate>Mon, 08 Dec 2025 16:21:48 +0800</pubDate>
+      <guid>https://amorfatix.github.io/posts/rent-gpu/</guid>
+      <description>&lt;p&gt;cs336第二部分涉及到多GPU并行，实验室的服务器都只有一张GPU&amp;ndash;多机单卡，有些尴尬，所以租卡来实践。&lt;/p&gt;
+&lt;p&gt;我看了几个平台，主流的autodl、阿里云，比较小众的Aladdin、趣算云、ucloud。我的需求仅仅是学习实践，考虑到成本，对GPU的内存计算几乎没有要求。但我发现低端卡反而很少，我推测平台主要提供高端算力，维护成本一样，高端卡盈利更多，低端卡数量本就不多，像我这样租低端卡入门的学生应该不少，所以就导致了现在尴尬的局面：低端卡短缺。&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20251208165356263&#34; loading=&#34;lazy&#34; src=&#34;../assets/image-20251208165356263.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20251208165318929&#34; loading=&#34;lazy&#34; src=&#34;../assets/image-20251208165318929.png&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;autodl：很多人推荐，但剩下的3090都是单张的，遗憾跳过&lt;/li&gt;
+&lt;li&gt;阿里云：贵，跳过&lt;/li&gt;
+&lt;li&gt;Aladdin：原本寄予厚望，因为它的宣传就是比较适合学生，工作流创新，但是我安装vscode插件启动的适合遇到问题，发到交流群没有回复，客服也没有回复，差评&lt;/li&gt;
+&lt;li&gt;趣算云：价格不错，可惜低端卡没了或者不支持多卡&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://passport.compshare.cn/register?referral_code=g7iRJstrkUFf45o7u8bK6&#34;&gt;ucloud&lt;/a&gt;： 价格比autodl便宜，低端卡还有，最后我选择了它。高校认证后还会送20元算力券✌&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;我选的配置如下，挺便宜的：&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20251208170222928&#34; loading=&#34;lazy&#34; src=&#34;../assets/image-20251208170222928.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;使用体验还可以。github下载文件挺快的。&lt;/p&gt;
+&lt;p&gt;因为cs336 作业是uv虚拟环境，我直接从新git clone了作业包，&lt;code&gt;uv run&lt;/code&gt;配置环境，问题是没配置镜像源下载的太慢了，改了配置文件：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;tool&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;uv&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;index-url&lt;/span&gt; = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;https://mirrors.aliyun.com/pypi/simple/&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;# 国内PyPI镜像&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;extra-index-url&lt;/span&gt; = [&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;https://pypi.nvidia.com&amp;#34;&lt;/span&gt;] &lt;span style=&#34;color:#75715e&#34;&gt;# NVIDIA官方仓库&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;重启终端，再下载很迅速。&lt;/p&gt;
+&lt;p&gt;DDP测试成功！&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20251208170753218&#34; loading=&#34;lazy&#34; src=&#34;../assets/image-20251208170753218.png&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;ccf-会员领取算力券&#34;&gt;CCF 会员领取算力券&lt;/h4&gt;
+&lt;!-- raw HTML omitted --&gt;</description>
+    </item>
+    <item>
+      <title>稀疏注意力</title>
+      <link>https://amorfatix.github.io/posts/sparse-attention/</link>
+      <pubDate>Fri, 05 Dec 2025 16:21:48 +0800</pubDate>
+      <guid>https://amorfatix.github.io/posts/sparse-attention/</guid>
+      <description>&lt;h3 id=&#34;deepseek-v32&#34;&gt;&lt;strong&gt;DeepSeek-V3.2&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;标题&lt;/strong&gt;：DeepSeek-V3.2: Pushing the Frontier of Open Large Language Models&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;作者&lt;/strong&gt;：DeepSeek-AI&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;发表时间/会议&lt;/strong&gt;：2025.12&lt;/p&gt;
+&lt;p&gt;闭源模型（如 GPT-5、Gemini-3.0-Pro）在复杂任务上的性能加速提升，而开源模型的进步速度相对较慢，两者之间的性能差距正在扩大。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;开源模型的三大瓶颈&lt;/strong&gt;：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;架构效率低&lt;/strong&gt;：依赖传统注意力机制，长序列计算复杂度高，采用DSA（Deepseek Sparse Attention）架构，主要依赖&lt;strong&gt;Top-k 选择&lt;/strong&gt;和&lt;strong&gt;闪电索引器&lt;/strong&gt;来选择最重要的 Token&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;后训练计算资源不足&lt;/strong&gt;：开源模型在后训练阶段计算投入有限，影响复杂任务性能。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;智能体能力滞后&lt;/strong&gt;：在泛化能力和指令跟随方面明显落后于闭源模型。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;nsa--原生稀疏注意力&#34;&gt;NSA  原生稀疏注意力&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;标题&lt;/strong&gt;：Native Sparse Attention: Hardware-Aligned and Natively Trainable Sparse Attention&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;作者&lt;/strong&gt;：Jingyang Yuan 等人，来自北京大学和 DeepSeek-AI 。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;发表时间/会议&lt;/strong&gt;：ACL 2025 最佳论文&lt;/p&gt;
+&lt;p&gt;Native体现在从头预训练，让所有参数（包括新的 MLP $\phi$ 和门控 $g_t^c$）协同学习稀疏模式。&lt;/p&gt;
+&lt;p&gt;NSA将注意力机制拆分为三个并行的分支计算Attention输出：&lt;strong&gt;压缩、选择、滑动窗口&lt;/strong&gt;。压缩和选择都是分块的(硬件友好，GPU分块计算)，用MLP压缩token块(输入向量序列，输出单个压缩后的token)，按照压缩块计算出的注意力分数对压缩块进行top-n选择，滑动窗口选择局部token，最后通过门控MLP（输入q输出三个权重）加权计算结果，同时计算&lt;strong&gt;压缩的全局概览&lt;/strong&gt;、&lt;strong&gt;筛选出的关键细节&lt;/strong&gt;和&lt;strong&gt;最近的局部上下文&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;压缩、选择、加权都是可训练的、动态的。&lt;/p&gt;
+&lt;p&gt;受 FlashAttention 的启发，越来越多的稀疏注意力工作（包括 NSA 自己）都把重心放在利用 &lt;strong&gt;Triton&lt;/strong&gt; 等工具开发硬件对齐的内核上，确保理论上的稀疏度能转化为实际的吞吐量提升。&lt;/p&gt;
+&lt;p&gt;思考: 如果 NSA 成为主流，当前的插件式稀疏方法将无法在性能和效率上竞争。它们要么被 NSA 的原生架构所取代，要么必须升级为&lt;strong&gt;服务于 NSA 高效内核的系统级调度和深度压缩工具&lt;/strong&gt;。&lt;/p&gt;
+&lt;h3 id=&#34;fastgen--稀疏注意力&#34;&gt;FastGen  稀疏注意力&lt;/h3&gt;
+&lt;p&gt;FastGen: Adaptive KV Cache Compression for LLMs&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Hello World</title>
+      <link>https://amorfatix.github.io/posts/hello-world/</link>
+      <pubDate>Fri, 21 Nov 2025 22:21:18 +0800</pubDate>
+      <guid>https://amorfatix.github.io/posts/hello-world/</guid>
+      <description>&lt;p&gt;这个博客诞生于本人和女友闹矛盾后！！！闹矛盾之后还要汇报，实在是太惨了。&lt;/p&gt;
+&lt;p&gt;写本周进度时才发现前端学习停滞了许久，我跟AI讨论现在这个时代学习前端的意义是什么，现在AI能轻易的写出更规范的能跑的代码，我还需要学吗，讨论出的结论是目前前端学习应该侧重设计模式、数据流、性能优化和系统架构。不过我以后大概率不会做前端，只是需要具备这项能力。&lt;/p&gt;
+&lt;p&gt;该博客创建全程在gemini的指导下。gemini推荐博客分成两个仓库:源码仓库和发布仓库，这样便于管理。&lt;/p&gt;
+&lt;h3 id=&#34;安装hugo和主题&#34;&gt;安装hugo和主题&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;choco install hugo -confirm  &lt;span style=&#34;color:#75715e&#34;&gt;# windows cmd 管理员权限运行&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hugo new site my-hugo-blog
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cd my-hugo-blog
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 进入主题文件夹&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git init
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git submodule add https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;配置文件&#34;&gt;配置文件&lt;/h3&gt;
+&lt;p&gt;这是我最终的配置文件&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;baseURL&lt;/span&gt; = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;https://amorfatix.github.io/&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;languageCode&lt;/span&gt; = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;en-us&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;title&lt;/span&gt; = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;AmorFatIX&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;theme&lt;/span&gt;=&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;PaperMod&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;params&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;homeInfoPaginate&lt;/span&gt; = &lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;ShowReadingTime&lt;/span&gt; = &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;ShowPostNavLinks&lt;/span&gt; = &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;ShowBreadCrumbs&lt;/span&gt; = &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;ShowCodeCopyButtons&lt;/span&gt; = &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;assets_disable_fingerprinting&lt;/span&gt; = &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  [&lt;span style=&#34;color:#a6e22e&#34;&gt;params&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;homeInfoParams&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;Title&lt;/span&gt; = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;你好，我是AmorFatIX&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;Content&lt;/span&gt; = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;我告诉自己的灵魂说，别作声，耐心等待。&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  [[&lt;span style=&#34;color:#a6e22e&#34;&gt;params&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;socialIcons&lt;/span&gt;]]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;name&lt;/span&gt; = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;GitHub&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;# 将 &amp;lt;platform&amp;gt; 替换为实际名称&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;url&lt;/span&gt; = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;https://github.com/amorfatix&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;# 将 &amp;lt;link&amp;gt; 替换为实际链接&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[[&lt;span style=&#34;color:#a6e22e&#34;&gt;menu&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;]]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;identifier&lt;/span&gt; = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;archives&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;name&lt;/span&gt; = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;archives&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;url&lt;/span&gt; = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;archives/&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;weight&lt;/span&gt; = &lt;span style=&#34;color:#ae81ff&#34;&gt;20&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id=&#34;public仓库-部署到github-pages&#34;&gt;public仓库 部署到github pages&lt;/h5&gt;
+&lt;p&gt;&lt;code&gt;setting-&amp;gt;pages&lt;/code&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
